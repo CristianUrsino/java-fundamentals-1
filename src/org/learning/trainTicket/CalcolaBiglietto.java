@@ -11,29 +11,35 @@ public class CalcolaBiglietto {
         int kilometresTravel = 0, age = 0;
         //inizializzo e verifico kilometresTravel
         do {
+            //fai finchè l'utente non inserisce un numero valido
             boolean messageOfErrorKilometresTravel = false;
             try {
                 System.out.print("how many kilometers do you have to travel: ");
                 kilometresTravel = scanner.nextInt();
             } catch (Exception e) {
+                //se l'utente non inserisce un numero
                 System.out.println("Invalid input. Please enter a valid number.");
                 messageOfErrorKilometresTravel = true;
                 scanner.next();
             }
+            //se l'utente inserisce un numero negativo (evitando il doppio messaggio di errore con un flag, in quanto se non numerico conta anche come negativo)
             if(kilometresTravel <=0 && ! messageOfErrorKilometresTravel) System.out.println("invalid input. Please enter a positive number");
         }while (kilometresTravel <= 0 );
         //inzializzo e verifico age
         do {
+            //fai finchè l'utente non inserisce un numero valido
             boolean messageOfErrorAge = false;
             try {
                 System.out.print("how old are you: ");
                 age = scanner.nextInt();
             } catch (Exception e) {
+                //se l'utente non inserisce un numero
                 System.out.println("Invalid input. Please enter a valid integer.");
                 messageOfErrorAge = true;
                 scanner.next();
             }
-            if(age <=0 && !messageOfErrorAge) System.out.println("invalid input. Please enter a positive number");
+            //se l'utente inserisce un numero negativo, o troppo grande (evitando il doppio messaggio di errore con un flag, in quanto se non numerico conta anche come negativo)
+            if((age <=0 || age > 120) && !messageOfErrorAge) System.out.println("invalid input. Please enter a positive number, under 120");
         }while (age <= 0 );
 
         //calcolo il prezzo di default
