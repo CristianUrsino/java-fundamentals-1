@@ -1,6 +1,6 @@
 package org.learning.trainTicket;
 
-public class TrainTicket {
+public class CalcolaBiglietto {
     public static void main(String[] args) {
 
     }
