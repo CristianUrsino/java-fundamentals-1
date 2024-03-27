@@ -5,10 +5,10 @@ Il programma va implementato nel metodo main della classe CalcolaBiglietto. Per 
 * ### Esercizio 2: Miei cibi preferiti
 Nel programma inizializzate un array (con i metodi visti a lezione) con la classifica dei vostri cibi preferiti (minimo 5, massimo 10 elementi)
 Poi stampate a video:
-la lunghezza della classifica
-il vostro cibo top (prima posizione della classifica)
-il vostro cibo preferito ma non troppo (ultima posizione della classifica)
-il cibo di mezza classifica, cioè che si trova nella posizione mediana
+la lunghezza della classifica.
+il vostro cibo top (prima posizione della classifica).
+il vostro cibo preferito ma non troppo (ultima posizione della classifica).
+il cibo di mezza classifica, cioè che si trova nella posizione mediana.
 * ### Esercizio 3: FizzBuzz
 Scrivi un programma che stampi i numeri da 1 a 100, ma per i multipli di 3 stampi “Fizz” al posto del numero e per i multipli di 5 stampi Buzz. Per i numeri che sono sia multipli di 3 che di 5 stampi FizzBuzz.
 * ### Bonus: Festa Ferragnez
