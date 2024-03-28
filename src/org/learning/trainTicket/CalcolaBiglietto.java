@@ -7,6 +7,10 @@ public class CalcolaBiglietto {
     public static void main(String[] args) {
         //definisco lo scanner
         Scanner scanner = new Scanner(System.in);
+        //definisco le costanti
+        final double PRICE_PER_KM = 0.21;
+        final int UNDER_AGE = 18;
+        final int OVER_AGE = 65;
         //definisco le variabili
         int kilometresTravel = 0, age = 0;
         //inizializzo e verifico kilometresTravel
@@ -43,16 +47,18 @@ public class CalcolaBiglietto {
         }while (age <= 0 );
 
         //calcolo il prezzo di default
-        double price = (double) kilometresTravel * 0.21;
+        double price = kilometresTravel * PRICE_PER_KM;
         //in base all'età applico lo sconto
-        if(age >= 65) {
+        if(age >= OVER_AGE) {
             //over 65 40% di sconto
             price *= 0.60;
-        }else if (age <= 18){
+        }else if (age <= UNDER_AGE){
             //under 18
             price *= 0.80;
         }
-        System.out.println("final price: " + price + "€");
+        //formattazione del testo ed output finale
+        String formatPrice = String.format("%.2f€", price);
+        System.out.println("final price: " + formatPrice);
 
         //chiudo lo scanner
         scanner.close();
