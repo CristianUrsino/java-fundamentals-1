@@ -7,12 +7,8 @@ public class FerragnezParty {
     public static void main(String[] args) {
         //inizializzo scanner
         Scanner scanner = new Scanner(System.in);
-        //dichiaro le variabili
-        String[] guests;
-        String fullName = "";
-        boolean nameInList = false;
-        //inizializzo l'array degli invitati
-        guests = new String[]{"Dua Lipa",
+        //dichiaro e inizializzo l'array degli invitati
+        final String[] GUESTS = {"Dua Lipa",
                 "Paris Hilton",
                 "Manuel Agnelli",
                 "J-Ax",
@@ -24,6 +20,9 @@ public class FerragnezParty {
                 "Martina Maccherone",
                 "Rachel Zeilic"
         };
+        //dichiaro e inizializzo le variabili
+        String fullName = "";
+        boolean nameInList = false;
         //chiedo all'utente il nome completo e lo salvo nella variabile
         do{
             //cicla finchè non è corretto
@@ -37,10 +36,11 @@ public class FerragnezParty {
         }while(fullName.isEmpty());
         //porto tutto in minuscolo
         fullName = fullName.toLowerCase();
-        //se presente nella lista entra
+        //se presente nella lista entra, quindi:
         int i = 0;
-        while (i < guests.length && !nameInList){
-            if(fullName.equals(guests[i].toLowerCase())){
+        while (i < GUESTS.length && !nameInList){
+            //cicla finchè non finisce la lista o finchè il nome non è stato trovato
+            if(fullName.equals(GUESTS[i].toLowerCase())){
                 //il nome è presente nella lista (nome utente minuscolo = nome nella posizione i minuscolo)
                 nameInList = true;
             }
@@ -52,9 +52,13 @@ public class FerragnezParty {
         //chiudo scanner
         scanner.close();
     }
+
+    //se contiene numeri ritorna vero
     public static boolean containsNumbers(String s) {
         for (int i = 0; i < s.length(); i++) {
+            //cicla tutti i caratteri dell'array
             if (Character.isDigit(s.charAt(i))) {
+                //se i carattere è un numero ritorna vero
                 return true;
             }
         }
